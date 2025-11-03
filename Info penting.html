@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PERINGATAN!</title>
+  <style>
+    body {
+      background: #000;
+      color: red;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 24px;
+      margin-top: 50px;
+    }
+    .btn {
+      background: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚠️ VIRUS TERDETEKSI! ⚠️</h1>
+  <p>Perangkat Anda terinfeksi malware berbahaya!</p>
+  <button class="btn" onclick="fakeFix()">PERBAIKI SEKARANG</button>
+
+  <script>
+    // Fungsi prank utama
+    function fakeFix() {
+      alert("Memperbaiki sistem...\nJangan tutup jendela ini!");
+      setTimeout(() => {
+        alert("Gagal memperbaiki! Coba lagi.");
+        showPopup();
+      }, 2000);
+    }
+
+    // Tampilkan popup berulang
+    function showPopup() {
+      const messages = [
+        "Virus masih aktif!",
+        "Data Anda sedang dihapus!",
+        "Hubungi admin segera!",
+        "Jangan tekan apa-apa!",
+        "HP Anda akan meledak dalam 5 detik!",
+        "Klik 'OK' untuk menyelamatkan data!"
+      ];
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      alert(msg);
+      // Ulangi terus
+      setTimeout(showPopup, 1000 + Math.random() * 2000);
+    }
+
+    // Mulai prank otomatis setelah 3 detik
+    setTimeout(showPopup, 3000);
+
+    // Cegah pengguna menutup halaman
+    window.addEventListener('beforeunload', function(e) {
+      e.preventDefault();
+      e.returnValue = 'Perangkat Anda dalam bahaya!';
+    });
+  </script>
+</body>
+</html>
